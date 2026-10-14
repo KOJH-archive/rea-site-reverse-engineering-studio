@@ -49,6 +49,31 @@
 
 See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
 
+## Site Reverse Engineering Studio extension
+
+This checkout also contains a local, one-click workflow for turning a public
+website observation into an AI-assisted development specification.
+
+Proposed project name: **REA Site Reverse Engineering Studio**
+
+The workflow opens a Chromium-compatible browser with CDP, observes the target
+page, preserves REA Evidence, writes a JSON analysis, and creates a structured
+development-spec prompt. It can then generate a specification with an Ollama
+model, an LM Studio model, or any OpenAI-compatible endpoint. If no model is
+available, it still writes a provenance-aware fallback specification.
+
+Run it on Windows by double-clicking `reverse-engineer-site.cmd`, or from a
+terminal:
+
+```bash
+node scripts/one-click-reverse-engineer-site.mjs https://example.com/map
+```
+
+The generated files are written to `site-reverse-engineering/` and are local
+working artifacts; they are intentionally not part of the distributable REA
+package. See the [extension development specification](docs/site-reverse-engineering-development-spec.md)
+for the logical structure, technology stack, limitations, and next steps.
+
 REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
 
 Setup registers REA with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, or IDA installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.

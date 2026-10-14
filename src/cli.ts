@@ -38,6 +38,7 @@ import { registerWebRuntimeCommands } from "./cli/webRuntimeCommands.js";
 import { registerWebNetworkCaptureCommands } from "./cli/webNetworkCaptureCommands.js";
 import { registerJavaScriptRecoveryCommands } from "./cli/javascriptRecoveryCommands.js";
 import { registerAdvancedBrowserCommands } from "./cli/browserAdvancedCommands.js";
+import { registerSiteReverseEngineeringCommands } from "./cli/siteReverseEngineeringCommands.js";
 import { registerBrowserScenarioCommands } from "./cliBrowserScenarioCommands.js";
 import { registerElectronCommands } from "./cli/electronCommands.js";
 import { registerJavaScriptRuntimeObservationCommands } from "./cliJavaScriptRuntimeCommands.js";
@@ -124,6 +125,7 @@ export const createCli = (
   registerWebNetworkCaptureCommands(cli, logger, environment);
   registerJavaScriptRecoveryCommands(cli, logger, environment);
   registerAdvancedBrowserCommands(cli, logger);
+  registerSiteReverseEngineeringCommands(cli, logger);
   registerBrowserScenarioCommands(cli, logger, environment);
   registerElectronCommands(cli, logger, environment);
   registerJavaScriptRuntimeObservationCommands(cli, logger);
